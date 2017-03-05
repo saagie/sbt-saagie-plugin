@@ -1,5 +1,7 @@
 # sbt-saagie-plugin
 
+[![Travis CI](https://travis-ci.org/spotify/docker-maven-plugin.svg?branch=master)](https://travis-ci.org/spotify/docker-maven-plugin/) 
+
 A SBT plugin to push jar in Saagie Manager and create a new Scala or Spark job
 
 More informations about Saagie : https://www.saagie.com/
