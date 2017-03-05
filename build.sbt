@@ -21,22 +21,38 @@ libraryDependencies ++= Seq(
   "ch.qos.logback" %  "logback-classic" % "1.1.7",
   "com.typesafe.play" %% "play-ws" % "2.4.3")
 
+import ReleaseTransformations._
+
+releaseProcess := Seq[ReleaseStep](
+  checkSnapshotDependencies,
+  inquireVersions,
+  runClean,
+  runTest,
+  setReleaseVersion,
+  commitReleaseVersion,
+  tagRelease,
+  ReleaseStep(action = Command.process("publishSigned", _)),
+  setNextVersion,
+  commitNextVersion,
+  ReleaseStep(action = Command.process("sonatypeReleaseAll", _)),
+  pushChanges
+)
+
 // Publication
 publishMavenStyle := true
 publishArtifact in Test := false
 pomIncludeRepository := { _ => false }
 
-/*publishTo := {
+publishTo := {
   val nexus = "https://oss.sonatype.org/"
   println("isSnapshot: " + isSnapshot.value)
   if (isSnapshot.value)
     Some("snapshots" at nexus + "content/repositories/snapshots")
   else
     Some("releases" at nexus + "service/local/staging/deploy/maven2")
-}*/
+}
 
-publishTo := Some(Resolver.file("file",  new File( "/home/aurelien/.m2/releases" )) )
-
+// publishTo := Some(Resolver.file("file",  new File( "/home/aurelien/.m2/releases" )) )
 
 pomExtra := {
   <scm>
