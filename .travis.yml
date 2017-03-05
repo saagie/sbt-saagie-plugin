@@ -2,7 +2,7 @@ language: scala
 scala:
    - 2.10.5
 before_script:
-  - git checkout master
+  - git checkout -b master
   - git pull origin master
 script: sbt clean 'release with-defaults'
 
