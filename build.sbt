@@ -1,6 +1,3 @@
-
-
-
 sbtPlugin := true
 
 // Metadata
