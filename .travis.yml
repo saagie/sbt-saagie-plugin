@@ -4,5 +4,6 @@ scala:
 deploy:
   on:
     tags: true
+    branch: develop
 script:
   - sbt clean 'release with-defaults'
