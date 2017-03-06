@@ -1,5 +1,11 @@
 language: scala
+jdk:
+  - oraclejdk7
 scala:
-   - 2.10.5
+  - 2.11.8
+cache:
+  directories:
+    - $HOME/.sbt
+    - $HOME/.ivy2
 script:
   - sbt clean 'release with-defaults'
