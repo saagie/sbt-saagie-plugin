@@ -1,8 +1,6 @@
-import sbtrelease.ReleaseStateTransformations.{setReleaseVersion => _, _}
-import sbtrelease._
+//import sbtrelease.ReleaseStateTransformations.{setReleaseVersion => _}
 
-
-git.useGitDescribe := true
+/*git.useGitDescribe := true
 git.baseVersion := "0.0.0"
 val VersionRegex = "v([0-9]+.[0-9]+.[0-9]+)-?(.*)?".r
 git.gitTagToVersionNumber := {
@@ -38,7 +36,8 @@ releaseVersion <<= releaseVersionBump(bumper=>{
 val showNextVersion = settingKey[String]("the future version once releaseNextVersion has been applied to it")
 val showReleaseVersion = settingKey[String]("the future version once releaseNextVersion has been applied to it")
 showReleaseVersion <<= (version, releaseVersion)((v,f)=>f(v))
-showNextVersion <<= (version, releaseNextVersion)((v,f)=>f(v))
+showNextVersion <<= (version, releaseNextVersion)((v,f)=>f(v))*/
+import sbtrelease.ReleasePlugin.autoImport.ReleaseTransformations._
 
 releaseProcess := Seq[ReleaseStep](
   checkSnapshotDependencies,
@@ -46,12 +45,12 @@ releaseProcess := Seq[ReleaseStep](
   setReleaseVersion,
   runClean,
   runTest,
-  //commitReleaseVersion,
+  commitReleaseVersion,
   tagRelease,
   publishArtifacts,
   //ReleaseStep(action = Command.process("publishSigned", _)),
-  //setNextVersion,
-  //commitNextVersion,
+  setNextVersion,
+  commitNextVersion,
   //ReleaseStep(action = Command.process("sonatypeReleaseAll", _)),
   pushChanges
 )
