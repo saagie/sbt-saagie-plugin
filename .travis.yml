@@ -1,9 +1,5 @@
 language: scala
 scala:
    - 2.10.5
-deploy:
-     on:
-       tags: true
-       branch: master
 script:
   - sbt clean 'release with-defaults'
