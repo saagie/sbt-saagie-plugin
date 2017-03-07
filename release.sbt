@@ -40,6 +40,7 @@ showNextVersion <<= (version, releaseNextVersion)((v,f)=>f(v))*/
 import sbtrelease.ReleasePlugin.autoImport.ReleaseTransformations._
 
 releaseIgnoreUntrackedFiles := true
+
 releaseProcess := Seq[ReleaseStep](
   checkSnapshotDependencies,
   inquireVersions,
