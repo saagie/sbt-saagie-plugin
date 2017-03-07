@@ -1,15 +1,19 @@
 language: scala
 jdk:
-  - oraclejdk7
+- oraclejdk7
 scala:
-  - 2.11.8
+- 2.11.8
 cache:
   directories:
-    - $HOME/.sbt
-    - $HOME/.ivy2
+  - $HOME/.sbt
+  - $HOME/.ivy2
 install:
-  - git clone https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
-  - cd $TRAVIS_REPO_SLUG
-  - git checkout -qf $TRAVIS_COMMIT
+- git clone https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
+- cd $TRAVIS_REPO_SLUG
+- git checkout -qf $TRAVIS_COMMIT
 script:
-  - sbt clean 'release with-defaults'
+- sbt clean 'release with-defaults'
+env:
+  global:
+  - secure: pakBsvceabARgfv6+9M15f9CmUDHBYzxJzg0ZyU2O4tC72dsAmwO4rQFMZ9s/twcqhI060P0ngUvSeFJJ3x/jY+YaS6WPx+GAGbIjw7nF+Y6QW9dkkBIwyXUmo0/KHl6wzRbly16kMu+ksfk2JSuf8FfuqRhQLoI7ydgfWE4LjbT9rKB2cqSW2oq7S8u5Q7HFRmyKU+g5Iewsew4jyChX2rswQGtZ3kIOrWQpkUq/i1VHQl200QlJJJC77eVks+QHj3RTnBBtTdgPzmfgyIN7LPXlUtNJuvP0X6l1xIJ7JG+IPdOi88Lnc3KgBwMWRNyFhBSGUR7+8go1P5JDb184YvO95QFefv9WHNc6rsaC5sQUevrfpdHCWOo1eQveFCEOtBhjg9ApY7KAvJIUZnarFz/BVh0Bb2YdPoXqc9VYGJWyl5JRTBDL0+vHqDaF0Vbh+HYffPu43HzPjHcN7N4jwpfRBM/1Lo5HvPZPdD3pxTAh8qTxvlNWy5JbjvASJI4gHvbBs6v26Wwp/zQTFZNc5UZOsnZ1jDVOFw7MK3IikRZXUNALSCCp3q7lnC9WNO50tI4HPd/Lfxy3Us02GkBzt5f+zp5Ewe5IURR48mH+WnTeXzHOLwuIv14OA3H0k5Wz1tebb+GxTgrbbEFMsnV5ezgVwzGqV0h4RzKtmZA5DA=
+  - secure: GVrg4DO1WOZaXLXk1QnQqLrYfkcGQNYWDKQDAv1NmhWpVIVlIMiW1TRJ4vgLlqhIcVU2K/8KljwP8VZVDwwaLpsVCDpy8OurSzuNtwTbuEhaxyPGAED/UhsmbCP5Ogk/ycuPXH3VaQMwFXesol3LrZ5HYqmX4CcOdXzJMcBALww7X63/6cU0SwAaCMnCnzNVqbZurOOrM/VWpm63u/TMU3bNv/PlBjQMSgn5+TgLpFhOtpMm+j0kFmazcHEyUkKwxftQcgA6Vt9pLhuFYY0U4m1Om0zW/MeP6UjT4nQtdHTsoGTbmX6CKJ5edMnJclZZ1FK/bQwNyFkV08PfFxfG2/j1PY6DSvmCZ1RZxNW+7pSejsBD8pLwBQ5w7H7LrX6YWVGN9xbLPZJu73Pm+VARnIeMecMjC10E6hHCPkMSDb3Hvdo1YnVfJPiE4BwLlJW3uV5EQKNy4y4vIZmuR4g/H8f9oDCM7FC09PcLqwlrbHJ9OK8kUorFzM5DGmVgV5NOtaf0k1Y9x2ZzXIFp3e9fPKWoRyKvb0H9emvJb53e3w1kvYtUG6MYa7zF8tdBy86yqMEHEeoFWJVdyBnKJBrDXjj1m446pLT8xfOpfYxFzQ5Ty8KlSq/emOzor4lu84RVwKsM7wDxeuZWb890N3+jXBkupAaONPowcJY0d71opqA=
