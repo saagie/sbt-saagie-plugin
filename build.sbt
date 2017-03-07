@@ -53,3 +53,5 @@ pomExtra := {
       </developer>
     </developers>
 }
+
+pgpPassphrase := Some(Array('s','a','a','g','i','e'))
