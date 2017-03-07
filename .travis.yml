@@ -7,6 +7,10 @@ cache:
   directories:
   - $HOME/.sbt
   - $HOME/.ivy2
+before_install:
+  - git config --global user.email "aure.vandel@gmail.com"
+  - git config --global user.name "avandel"
+
 script:
   - git checkout develop
   - sbt clean 'release with-defaults'
