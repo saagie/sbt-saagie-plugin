@@ -43,6 +43,7 @@ pomExtra := {
   <scm>
     <url>git@github.com:saagie/sbt-saagie-plugin.git</url>
     <connection>scm:git@github.com:saagie/sbt-saagie-plugin.git</connection>
+    <tag>HEAD</tag>
   </scm>
     <developers>
       <developer>
