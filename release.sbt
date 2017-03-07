@@ -45,12 +45,12 @@ releaseProcess := Seq[ReleaseStep](
   runClean,
   runTest,
   setReleaseVersion,
-  commitReleaseVersion,
+  //commitReleaseVersion,
   tagRelease,
   publishArtifacts,
   ReleaseStep(action = Command.process("publishSigned", _)),
   setNextVersion,
-  commitNextVersion,
+  //commitNextVersion,
   ReleaseStep(action = Command.process("sonatypeReleaseAll", _)),
-  pushChanges
+  //pushChanges
 )
