@@ -36,9 +36,6 @@ publishTo := {
   else
     Some("releases" at nexus + "service/local/staging/deploy/maven2")
 }
-
-// publishTo := Some(Resolver.file("file",  new File( "/home/aurelien/.m2/releases" )) )
-
 pomExtra := {
   <scm>
     <url>git@github.com:saagie/sbt-saagie-plugin.git</url>
