@@ -41,8 +41,8 @@ publishTo := {
 
 pomExtra := {
   <scm>
-    <url>git@github.com:saagie/sbt-saagie-plugin.git</url>
-    <connection>scm:git@github.com:saagie/sbt-saagie-plugin.git</connection>
+    <url>git@github.com:saagie/test-travis.git</url>
+    <connection>scm:git@github.com:saagie/test-travis.git</connection>
   </scm>
     <developers>
       <developer>
