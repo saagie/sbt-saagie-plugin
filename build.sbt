@@ -28,16 +28,16 @@ publishMavenStyle := true
 publishArtifact in Test := false
 pomIncludeRepository := { _ => false }
 
-/*publishTo := {
+publishTo := {
   val nexus = "https://oss.sonatype.org/"
   println("isSnapshot: " + isSnapshot.value)
   if (isSnapshot.value)
     Some("snapshots" at nexus + "content/repositories/snapshots")
   else
     Some("releases" at nexus + "service/local/staging/deploy/maven2")
-}*/
+}
 
-publishTo := Some(Resolver.file("file",  new File( "/home/aurelien/.m2/releases" )) )
+// publishTo := Some(Resolver.file("file",  new File( "/home/aurelien/.m2/releases" )) )
 
 pomExtra := {
   <scm>
