@@ -54,4 +54,5 @@ pomExtra := {
     </developers>
 }
 
-pgpPassphrase := Option(System.getenv().get("GPG_PASSPHRASE")).map(_.toCharArray)
+// pgpPassphrase := Option(System.getenv().get("GPG_PASSPHRASE")).map(_.toCharArray)
+pgpPassphrase := Some(Array('a','u','r','e','l','i','e','n'))
