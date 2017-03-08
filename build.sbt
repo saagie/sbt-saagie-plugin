@@ -1,5 +1,7 @@
 sbtPlugin := true
 
+useGpg := true
+
 // Metadata
 organization := "io.saagie"
 name := "sbt-saagie-plugin"
