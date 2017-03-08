@@ -14,8 +14,10 @@ git.gitTagToVersionNumber := {
 // sbt release
 def setVersionOnly(selectVersion: Versions => String): (State) => State =  { st: State =>
   val vs = st.get(ReleaseKeys.versions).getOrElse(sys.error("No versions are set! Was this release part executed before inquireVersions?"))
+  println(vs)
   val selected = selectVersion(vs)
 
+  println(selected)
   st.log.info("Setting version to '%s'." format selected)
   val useGlobal =Project.extract(st).get(releaseUseGlobalVersion)
   val versionStr = (if (useGlobal) globalVersionString else versionString) format selected
