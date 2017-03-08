@@ -53,4 +53,5 @@ pomExtra := {
 }
 
 // pgpPassphrase := Option(System.getenv().get("GPG_PASSPHRASE")).map(_.toCharArray)
-pgpPassphrase := Some(Array('a','u','r','e','l','i','e','n'))
+pgpPassphrase := Some(Array('c','h','a','t','t','e'))
+pgpSecretRing := file("secring.asc")
