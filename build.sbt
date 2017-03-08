@@ -1,7 +1,5 @@
 sbtPlugin := true
 
-useGpg := true
-
 // Metadata
 organization := "io.saagie"
 name := "sbt-saagie-plugin"
@@ -54,4 +52,4 @@ pomExtra := {
 
 // pgpPassphrase := Option(System.getenv().get("GPG_PASSPHRASE")).map(_.toCharArray)
 pgpPassphrase := Some(Array('c','h','a','t','t','e'))
-pgpSecretRing := file("secring.asc")
+//pgpSecretRing := file("secring.gpg")
