@@ -37,7 +37,7 @@ In order for this to succeed, at least some parameters can be set.
     mainClazz in createSaagieJob := "your-main-class"
         
 ### Update
-You can create a job with the above configurations by running this command.
+You can update a job with the above configurations by running this command.
 
     sbt updateSaagieJob
 

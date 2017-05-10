@@ -1,4 +1,7 @@
 language: scala
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+/
 jdk:
 - oraclejdk8
 scala:
