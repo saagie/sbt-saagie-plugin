@@ -53,7 +53,7 @@ In order for this to succeed, at least some parameters can be set.
      targetDirectory in createSaagieJob :="your-target-directory"
      jar in createSaagieJob := "your-jar-name"
      mainClazz in createSaagieJob := "your-main-class"
-     jobId in createSaagieJob := 0
+     jobId in updateSaagieJob := 0
 
 The difference between create and update is the add of the "jobId" parameter in the configuration to know which job should be updated (if present in the "create" mode, it'll be just ignored)
 
