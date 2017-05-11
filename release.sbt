@@ -24,6 +24,8 @@ releaseProcess := Seq(
   checkSnapshotDependencies,
   inquireVersions,
   runTest,
+  setReleaseVersion,
+  commitReleaseVersion,
   tagRelease,
   ReleaseStep(action = Command.process("publishSigned", _)),
   ReleaseStep(action = Command.process("sonatypeReleaseAll", _)),
