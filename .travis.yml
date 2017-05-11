@@ -21,8 +21,12 @@ before_install:
 - mv -fv config ~/.ssh/config
 - gpg --import secring.asc
 script:
-- git checkout develop
-- sbt clean 'release with-defaults'
+  - git checkout $TRAVIS_BRANCH
+  - if [ ${TRAVIS_BRANCH} = "master" ]; then
+      sbt clean 'release with-defaults';
+    else
+      sbt clean publish;
+    fi
 env:
   global:
   - secure: pakBsvceabARgfv6+9M15f9CmUDHBYzxJzg0ZyU2O4tC72dsAmwO4rQFMZ9s/twcqhI060P0ngUvSeFJJ3x/jY+YaS6WPx+GAGbIjw7nF+Y6QW9dkkBIwyXUmo0/KHl6wzRbly16kMu+ksfk2JSuf8FfuqRhQLoI7ydgfWE4LjbT9rKB2cqSW2oq7S8u5Q7HFRmyKU+g5Iewsew4jyChX2rswQGtZ3kIOrWQpkUq/i1VHQl200QlJJJC77eVks+QHj3RTnBBtTdgPzmfgyIN7LPXlUtNJuvP0X6l1xIJ7JG+IPdOi88Lnc3KgBwMWRNyFhBSGUR7+8go1P5JDb184YvO95QFefv9WHNc6rsaC5sQUevrfpdHCWOo1eQveFCEOtBhjg9ApY7KAvJIUZnarFz/BVh0Bb2YdPoXqc9VYGJWyl5JRTBDL0+vHqDaF0Vbh+HYffPu43HzPjHcN7N4jwpfRBM/1Lo5HvPZPdD3pxTAh8qTxvlNWy5JbjvASJI4gHvbBs6v26Wwp/zQTFZNc5UZOsnZ1jDVOFw7MK3IikRZXUNALSCCp3q7lnC9WNO50tI4HPd/Lfxy3Us02GkBzt5f+zp5Ewe5IURR48mH+WnTeXzHOLwuIv14OA3H0k5Wz1tebb+GxTgrbbEFMsnV5ezgVwzGqV0h4RzKtmZA5DA=
