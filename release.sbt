@@ -1,6 +1,8 @@
 import sbtrelease.Git
 import sbtrelease.ReleasePlugin.autoImport.ReleaseTransformations._
 
+releaseIgnoreUntrackedFiles := true
+
 lazy val switchToDevelop = ReleaseStep(action = st => {
   val extracted = Project.extract(st)
   val git = extracted.get(releaseVcs).get.asInstanceOf[Git]
