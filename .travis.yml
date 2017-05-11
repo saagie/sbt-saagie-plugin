@@ -23,7 +23,6 @@ before_install:
   - gpg --import secring.asc
 script:
   - if [ ${TRAVIS_BRANCH} = "master" ]; then
-      git pull origin develop;
       git checkout master;
       sbt clean 'release with-defaults';
     else
