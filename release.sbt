@@ -18,6 +18,8 @@ lazy val revertToMaster = ReleaseStep(action = st => {
   st
 })
 
+releaseCommitMessage := s"Setting version to ${(version in ThisBuild).value} [ci skip]"
+
 releaseProcess := Seq(
   checkSnapshotDependencies,
   inquireVersions,
