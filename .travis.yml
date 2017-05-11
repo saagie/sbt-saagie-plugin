@@ -23,7 +23,7 @@ before_install:
 script:
   - git checkout $TRAVIS_BRANCH
   - if [ ${TRAVIS_BRANCH} = "master" ]; then
-      git checkout develop;
+      git fetch;
       git checkout master;
       sbt clean 'release with-defaults';
     else
