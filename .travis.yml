@@ -21,6 +21,7 @@ before_install:
 - mv -fv config ~/.ssh/config
 - gpg --import secring.asc
 script:
+  - git checkout develop
   - git checkout $TRAVIS_BRANCH
   - if [ ${TRAVIS_BRANCH} = "master" ]; then
       git fetch;
