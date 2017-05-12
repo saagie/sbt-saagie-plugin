@@ -34,6 +34,6 @@ releaseProcess := Seq(
   switchToDevelop,
   setNextVersion,
   commitNextVersion,
-  revertToMaster//,
-  //  pushChanges
+  revertToMaster,
+  pushChanges
 )
