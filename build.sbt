@@ -6,8 +6,6 @@ name := "sbt-saagie-plugin"
 scalaVersion := "2.10.5"
 description := "An SBT plugin for deploying scala and spark jobs on Saagie"
 
-enablePlugins(GitVersioning, GitBranchPrompt)
-
 // Distribution
 licenses := Seq("Apache" -> url("http://www.apache.org/licenses/LICENSE-2.0"))
 homepage := Some(url("https://github.com/saagie/sbt-saagie-plugin"))
