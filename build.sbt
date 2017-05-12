@@ -3,7 +3,7 @@ sbtPlugin := true
 // Metadata
 organization := "io.saagie"
 name := "sbt-saagie-plugin"
-scalaVersion := "2.10.5"
+scalaVersion := "2.10.6"
 description := "An SBT plugin for deploying scala and spark jobs on Saagie"
 
 // Distribution
