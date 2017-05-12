@@ -38,4 +38,5 @@ dd:
     -in id_rsa.enc -out ~\/.ssh/id_rsa -d
 after_failure:
   - git status
+  - git diff
   - sbt last
