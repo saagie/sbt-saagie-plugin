@@ -28,12 +28,12 @@ releaseProcess := Seq(
   runTest,
   setReleaseVersion,
   tagRelease,
-  commitReleaseVersion//,
+  commitReleaseVersion,
   //  ReleaseStep(action = Command.process("publishSigned", _)),
   //  ReleaseStep(action = Command.process("sonatypeReleaseAll", _)),
-  //  switchToDevelop,
-  //  setNextVersion,
-  //  commitNextVersion,
-  //  revertToMaster,
+  switchToDevelop,
+  setNextVersion,
+  commitNextVersion,
+  revertToMaster//,
   //  pushChanges
 )
