@@ -25,15 +25,15 @@ releaseCommitMessage := s"Setting version to ${(version in ThisBuild).value} [ci
 releaseProcess := Seq(
   checkSnapshotDependencies,
   inquireVersions,
-  runTest//,
-//  setReleaseVersion,
-//  tagRelease,
-//  commitReleaseVersion,
-//  ReleaseStep(action = Command.process("publishSigned", _)),
-//  ReleaseStep(action = Command.process("sonatypeReleaseAll", _)),
-//  switchToDevelop,
-//  setNextVersion,
-//  commitNextVersion,
-//  revertToMaster,
-//  pushChanges
+  runTest,
+  setReleaseVersion,
+  tagRelease,
+  commitReleaseVersion//,
+  //  ReleaseStep(action = Command.process("publishSigned", _)),
+  //  ReleaseStep(action = Command.process("sonatypeReleaseAll", _)),
+  //  switchToDevelop,
+  //  setNextVersion,
+  //  commitNextVersion,
+  //  revertToMaster,
+  //  pushChanges
 )
