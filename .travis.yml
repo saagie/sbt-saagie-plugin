@@ -19,7 +19,7 @@ before_install:
   - tar xvf secrets.tar
   - mv -fv id_rsa ~/.ssh/id_rsa
   - chmod 600 ~/.ssh/id_rsa
-  - mv -fv config ~/.ssh/config
+  - cp -fv config ~/.ssh/config
   - gpg --import secring.asc
 script:
   - if [ ${TRAVIS_BRANCH} = "master" ]; then
