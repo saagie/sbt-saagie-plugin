@@ -29,6 +29,7 @@ pomIncludeRepository := { _ => false }
 publishTo := {
   val nexus = "https://oss.sonatype.org/"
   println("isSnapshot: " + isSnapshot.value)
+  println("version: " + version.value)
   if (isSnapshot.value)
     Some("snapshots" at nexus + "content/repositories/snapshots")
   else
