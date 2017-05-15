@@ -64,8 +64,8 @@ object SBTSaggiePlugin extends AutoPlugin {
     try {
     saagieClient.checkManagerConnection()
     val job = saagieClient.checkJobExists()
-    saagieClient.uploadFile(jobSettings.targetDirectory, jobSettings.jarName)
-    val updatedJob = Job(job.id, job.name, job.category, Current(job.current.id, job.current.job_id, job.current.number, job.current.template, job.current.file, job.current.creation_date, jobSettings.releaseNote, jobSettings.cpu, jobSettings.mem, jobSettings.disk), jobSettings.streaming)
+    val fileName = saagieClient.uploadFile(jobSettings.targetDirectory, jobSettings.jarName)
+    val updatedJob = Job(job.id, job.name, job.category, Current(job.current.id, job.current.job_id, job.current.number, job.current.template, fileName, job.current.creation_date, jobSettings.releaseNote, jobSettings.cpu, jobSettings.mem, jobSettings.disk), jobSettings.streaming)
     saagieClient.updateJob(updatedJob)
     logger.info("  >> Job updated : " + generateURLJob(jobSettings.urlApi, jobSettings.platformId, jobSettings.jobId))
     } finally {
