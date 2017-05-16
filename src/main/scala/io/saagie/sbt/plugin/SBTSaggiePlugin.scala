@@ -1,8 +1,9 @@
 package io.saagie.sbt.plugin
 
 import io.saagie.sbt.plugin.enum.JobType
+import org.slf4j
 import org.slf4j.LoggerFactory
-import sbt.{AutoPlugin, _}
+import sbt.{AutoPlugin, Def, _}
 
 /**
   * Created by aurelien on 30/09/16.
@@ -16,7 +17,7 @@ case class JobSettings(urlApi: String,
                        jobName: String,
                        jobType: String,
                        jobCategory: String,
-                       javaVersion: Int,
+                       javaVersion: Double,
                        sparkVersion: String,
                        cpu: Double,
                        mem: Int,
@@ -36,11 +37,11 @@ object SBTSaggiePlugin extends AutoPlugin {
     urlApi.replace("/api/v1", "/#/manager/" + platformId + "/job/" + jobId)
   }
 
-  def create(jobSettings: JobSettings) = {
+  def create(jobSettings: JobSettings): Unit = {
 
     val saagieClient = new SaagieClient(jobSettings)
     try {
-      saagieClient.getManagerStatus()
+      saagieClient.getManagerStatus
 
       val filename = saagieClient.uploadFile(jobSettings.targetDirectory, jobSettings.jarName)
       logger.info("filename created " + filename)
@@ -59,7 +60,7 @@ object SBTSaggiePlugin extends AutoPlugin {
     }
   }
 
-  def update(jobSettings: JobSettings) = {
+  def update(jobSettings: JobSettings): Unit = {
     val saagieClient = new SaagieClient(jobSettings)
     try {
       saagieClient.checkManagerConnection()
@@ -73,7 +74,7 @@ object SBTSaggiePlugin extends AutoPlugin {
     }
   }
 
-  def logger = LoggerFactory.getLogger(this.getClass)
+  def logger: slf4j.Logger = LoggerFactory.getLogger(this.getClass)
 
   object autoImport {
 
@@ -85,7 +86,7 @@ object SBTSaggiePlugin extends AutoPlugin {
     val jobType = settingKey[String]("Represents the type of the job you want to create or to update.")
     val jobCategory = settingKey[String]("Represents the category of the job you want to create or to update.")
     val jobId = settingKey[Int]("Represents the id the job you want to update.")
-    val javaVersion = settingKey[Int]("Represents the version of language you want to run your job.")
+    val javaVersion = settingKey[Double]("Represents the version of language you want to run your job.")
     val sparkVersion = settingKey[String]("Represents the version of spark you want to run your job.")
     val cpu = settingKey[Double]("Represents the amount of CPU you want to reserve for your job.")
     val mem = settingKey[Int]("Represents the amount of memory you want to reserve for your job.")
@@ -109,7 +110,7 @@ object SBTSaggiePlugin extends AutoPlugin {
       jobType in createSaagieJob := "java-scala",
       jobCategory in createSaagieJob := "extract",
       jobId in updateSaagieJob := 0,
-      javaVersion in createSaagieJob := 8,
+      javaVersion in createSaagieJob := 8.121,
       sparkVersion in createSaagieJob := "1.6",
       cpu in createSaagieJob := 0.5,
       mem in createSaagieJob := 512,
@@ -146,8 +147,8 @@ object SBTSaggiePlugin extends AutoPlugin {
 
   import autoImport._
 
-  override def trigger = allRequirements
+  override def trigger: PluginTrigger = allRequirements
 
-  override val projectSettings = createJobSettings ++ updateJobSettings
+  override val projectSettings: Seq[Def.Setting[_]] = createJobSettings ++ updateJobSettings
 
 }
