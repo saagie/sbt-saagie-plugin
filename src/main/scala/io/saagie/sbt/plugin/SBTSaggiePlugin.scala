@@ -17,7 +17,7 @@ case class JobSettings(urlApi: String,
                        jobName: String,
                        jobType: String,
                        jobCategory: String,
-                       javaVersion: Double,
+                       javaVersion: String,
                        sparkVersion: String,
                        cpu: Double,
                        mem: Int,
@@ -86,7 +86,7 @@ object SBTSaggiePlugin extends AutoPlugin {
     val jobType = settingKey[String]("Represents the type of the job you want to create or to update.")
     val jobCategory = settingKey[String]("Represents the category of the job you want to create or to update.")
     val jobId = settingKey[Int]("Represents the id the job you want to update.")
-    val javaVersion = settingKey[Double]("Represents the version of language you want to run your job.")
+    val javaVersion = settingKey[String]("Represents the version of language you want to run your job.")
     val sparkVersion = settingKey[String]("Represents the version of spark you want to run your job.")
     val cpu = settingKey[Double]("Represents the amount of CPU you want to reserve for your job.")
     val mem = settingKey[Int]("Represents the amount of memory you want to reserve for your job.")
@@ -110,8 +110,8 @@ object SBTSaggiePlugin extends AutoPlugin {
       jobType in createSaagieJob := "java-scala",
       jobCategory in createSaagieJob := "extract",
       jobId in updateSaagieJob := 0,
-      javaVersion in createSaagieJob := 8.121,
-      sparkVersion in createSaagieJob := "1.6",
+      javaVersion in createSaagieJob := "8.121",
+      sparkVersion in createSaagieJob := "2.1.0",
       cpu in createSaagieJob := 0.5,
       mem in createSaagieJob := 512,
       disk in createSaagieJob := 1024,
