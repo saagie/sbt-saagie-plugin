@@ -13,7 +13,7 @@ More informations about Saagie : https://www.saagie.com/
   * [List of all parameters available](#list-of-all-parameters-available)
     * [Mandatory for all modes](#mandatory-for-all-modes)
     * [Mandatory for update mode only](#mandatory-for-update-mode-only)
-    * [Mandatory if you use authenticating directly in build.sbt](#mandatory-if-you-use-authenticating-directly-in-build.sbt)
+    * [Mandatory if you use authenticating directly in build.sbt](#mandatory-auth)
   * [Others parameters can be overriden](#others-parameters-can-be-overriden)
     
 ## Usage
@@ -84,7 +84,7 @@ These parameters are mandatory (in create and update mode) :
 * **jobId**
   - represents the id the job you want to update. This id is accessible via the URL when you are on the details page of the job : _https://.../#/manager/1/job/**49**_ Here "**49**" is the jobId. 
 
-#### Mandatory if you use authenticating directly in build.sbt
+#### <a name="mandatory-auth"></a>Mandatory if you use authenticating directly in build.sbt
 
 We recommand to use the authenticating mode using the ~/.sbt/0.13/global.sbt. It's more secure and you'll be sure to never commit your login/password in your build.sbt.
 
@@ -110,12 +110,12 @@ We recommand to use the authenticating mode using the ~/.sbt/0.13/global.sbt. It
   
 * **javaVersion**
   - represents the version of language you want to run your job
-  - default value : 8
-  - only 8 or 7 are available (See [anapsix/alpine-java](https://hub.docker.com/r/anapsix/alpine-java/) to see the precise version of java we use). 
+  - default value : 8.121
+  - only 8.121 or 7.80 are available (See [anapsix/alpine-java](https://hub.docker.com/r/anapsix/alpine-java/) to see the precise version of java we use). 
 
 * **sparkVersion**
   - represents the version of spark you want to run your job
-  - default value : 1.6.1
+  - default value : 2.1.0
   
 * **streaming**
   - represents if the job is a streaming job or not
