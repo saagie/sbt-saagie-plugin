@@ -13,7 +13,7 @@ More informations about Saagie : https://www.saagie.com/
   * [List of all parameters available](#list-of-all-parameters-available)
     * [Mandatory for all modes](#mandatory-for-all-modes)
     * [Mandatory for update mode only](#mandatory-for-update-mode-only)
-    * [Mandatory if you use authenticating directly in build.sbt](#mandatory if you use authenticating directly in build.sbt)
+    * [Mandatory if you use authenticating directly in build.sbt](#mandatory-if-you-use-authenticating-directly-in-build.sbt)
   * [Others parameters can be overriden](#others-parameters-can-be-overriden)
     
 ## Usage
