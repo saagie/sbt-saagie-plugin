@@ -1,7 +1,7 @@
 # sbt-saagie-plugin
 
 [![Build Status](https://travis-ci.org/saagie/sbt-saagie-plugin.svg?branch=master)](https://travis-ci.org/saagie/sbt-saagie-plugin)
-
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.saagie/sbt-saagie-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.saagie/sbt-saagie-plugin)
 A SBT plugin to push jar in Saagie Manager and create a new Scala or Spark job
 
 More informations about Saagie : https://www.saagie.com/
