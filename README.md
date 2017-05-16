@@ -84,7 +84,7 @@ These parameters are mandatory (in create and update mode) :
 * **jobId**
   - represents the id the job you want to update. This id is accessible via the URL when you are on the details page of the job : _https://.../#/manager/1/job/**49**_ Here "**49**" is the jobId. 
 
-#### Mandatory if you use authenticating directly in build.sbt  
+#### Mandatory if you use authenticating directly in build.sbt
 
 We recommand to use the authenticating mode using the ~/.sbt/0.13/global.sbt. It's more secure and you'll be sure to never commit your login/password in your build.sbt.
 
